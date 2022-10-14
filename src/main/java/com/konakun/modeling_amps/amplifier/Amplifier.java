@@ -1,6 +1,7 @@
 package com.konakun.modeling_amps.amplifier;
 
 import lombok.Data;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +12,11 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "amplifiers")
+@EnableAutoConfiguration
 public class Amplifier {
 	@Id
     @GeneratedValue
-    private Long pk_amplifier;
+    private Integer pk_amplifier;
 
     @Column(nullable = false)
     private String name;

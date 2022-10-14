@@ -7,14 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 @Entity
 @Data
 @Table(name = "modeler_amplifier_models")
+@EnableAutoConfiguration
 public class ModelerAmplifier {
 	@Id
 	@GeneratedValue
-	private Long pk_modeler_amplifier_model;
+	private Integer pk_modeler_amplifier_model;
 	
 	@Column(nullable = false)
 	public String name;
