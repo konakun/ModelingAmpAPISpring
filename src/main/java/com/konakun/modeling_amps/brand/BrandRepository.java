@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 import static com.konakun.modeling_amps.utilities.Constants.ACTIVE;
 import static com.konakun.modeling_amps.utilities.Constants.INACTIVE;
