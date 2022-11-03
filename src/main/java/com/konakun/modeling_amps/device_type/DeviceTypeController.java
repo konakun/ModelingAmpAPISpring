@@ -67,16 +67,16 @@ public class DeviceTypeController {
 
     @PutMapping("/{primary_key}")
     @ResponseBody
-    public Optional<DeviceType> modifyDeviceType(@PathVariable Integer primaryKey, @RequestBody DeviceType deviceType,
+    public Optional<DeviceType> modifyDeviceType(@PathVariable Integer primary_key, @RequestBody DeviceType deviceType,
                                        HttpServletResponse response){
-        Integer modified = deviceTypeRepository.modifyDeviceType(primaryKey, deviceType);
+        Integer modified = deviceTypeRepository.modifyDeviceType(primary_key, deviceType);
 
         if(modified < 1){
             response.setStatus(SC_BAD_REQUEST);
             return null;
         }
 
-        Optional<DeviceType> retrievedDeviceType = deviceTypeRepository.findById(primaryKey);
+        Optional<DeviceType> retrievedDeviceType = deviceTypeRepository.findById(primary_key);
 
         if(retrievedDeviceType.isEmpty()){
             response.setStatus(SC_BAD_REQUEST);
