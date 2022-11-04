@@ -1,4 +1,4 @@
-package com.konakun.modeling_amps.power;
+package com.konakun.modeling_amps.wattage;
 
 import lombok.Data;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,12 +7,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "power")
+@Table(name = "wattages")
 @EnableAutoConfiguration
-public class Power {
+public class Wattage {
     @Id
     @GeneratedValue
-    private Integer pk_power;
+    private Integer pk_wattage;
 
     @Column(nullable = false)
     private String name;
