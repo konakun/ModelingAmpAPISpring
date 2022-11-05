@@ -26,9 +26,12 @@ public class Amplifier {
     
     @Column(nullable = false)
     private String model;
+
+    @Column(nullable = false)
+    private Integer pk_brand;
     
     @Column(nullable = false)
-    private Long pk_power;
+    private Integer pk_wattage;
     
     @Column(nullable = false)
     private boolean active;
