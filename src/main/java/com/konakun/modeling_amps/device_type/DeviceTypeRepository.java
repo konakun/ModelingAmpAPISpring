@@ -20,11 +20,11 @@ public interface DeviceTypeRepository extends JpaRepository<DeviceType, Integer>
     @Modifying
     @Transactional
     @Query("UPDATE DeviceType dt SET dt.active = " + INACTIVE + " WHERE dt.pk_type = :primary_key")
-    Integer disableDeviceType(@Param("primaryKey") Integer primaryKey);
+    Integer disableDeviceType(@Param("primary_key") Integer primary_key);
 
     @Modifying
     @Transactional
     @Query("UPDATE DeviceType dt SET dt.name = :#{#deviceType.name}, dt.active = "+ ACTIVE
-            + " WHERE dt.pk_type = :primaryKey")
-    Integer modifyDeviceType(@Param("primaryKey") Integer primaryKey, @Param("deviceType") DeviceType deviceType);
+            + " WHERE dt.pk_type = :primary_key")
+    Integer modifyDeviceType(@Param("primary_key") Integer primary_key, @Param("deviceType") DeviceType deviceType);
 }
